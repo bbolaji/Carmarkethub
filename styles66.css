@@ -1,0 +1,96 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+/* Header styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Section styles */
+section {
+    margin: 20px 0;
+}
+
+section h2 {
+    margin-bottom: 10px;
+}
+
+.car-listing {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.car-listing img {
+    max-width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+/* Form styles */
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input, form textarea, form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
