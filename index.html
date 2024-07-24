@@ -1,34 +1,45 @@
+<?php include('../includes/header.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CarMarketHub</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Car Market Hub - Homepage</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
     <header>
-        <h1>CarMarketHub</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#listings">Listings</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section id="home">
-        <h2>Welcome to CarMarketHub</h2>
-        <div class="image-container">
+        <h1>Welcome to Car Market Hub</h1>
+		<div class="image-container">
             <img src="image_96.jpg" alt="home">
-        <p>Your one-stop marketplace for new and used cars</p>
-    </section>
-    <section id="about">
-        <h2>About Us</h2>
-        <p>CarMarketHub is a platform where car dealers can advertise their new and used cars to potential buyers.</p>
-    </section>
-    <section id="listings">
+        <p>Your Ultimate Destination for Buying and Selling Cars</p>
+        <form action="search.php" method="GET" class="search-form">
+            <input type="text" name="query" placeholder="Search for cars...">
+            <button type="submit">Search</button>
+        </form>
+    </header>
+
+    <main>
+        <section class="featured-cars">
+            <h2>Featured Cars</h2>
+            <div class="car-list">
+                <!-- PHP code to fetch and display featured cars -->
+                <?php
+                include('../includes/db.php');
+                $result = $conn->query("SELECT * FROM cars ORDER BY created_at DESC LIMIT 6");
+                while ($car = $result->fetch_assoc()) {
+                    echo '<div class="car-item">';
+                    echo '<img src="../assets/images/' . $car['image'] . '" alt="' . $car['make'] . ' ' . $car['model'] . '">';
+                    echo '<h3>' . $car['make'] . ' ' . $car['model'] . '</h3>';
+                    echo '<p>Price: $' . number_format($car['price']) . '</p>';
+                    echo '<a href="listing.php?id=' . $car['id'] . '">View Details</a>';
+                    echo '</div>';
+                }
+                ?>
+            </div>
+        </section>
+    </main>
+<section id="listings">
         <h2>Car Listings</h2>
         <div class="car-listing">
             <img src="car1.png" alt="Car 1">
@@ -55,6 +66,14 @@
         </form>
     </section>
     <footer>
+        <p>&copy; 2024 CarMarketHub. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+    <?php include('../includes/footer.php'); ?>
+</body>
+</html>
         <p>&copy; 2024 CarMarketHub. All rights reserved.</p>
     </footer>
     <script src="script.js"></script>
