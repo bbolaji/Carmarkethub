@@ -3,14 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Market Hub - Homepage</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>Responsive Image</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to Car Market Hub</h1>
-        <div class="image-container">
-            <img src="image_10.jpg" alt="home">
+    <nav>
+        <ul>
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="#Home Page">Home</a></li>
+            <li><a href="#our-services">Our Services</a></li>
+            <li><a href="#technology-stack">Technology Stack</a></li>
+            <li><a href="#Listing">Listings-new</a></li>
+            <li><a href="#Listing">Listings-fairlyused</a></li>
+            <li><a href="#Registered-dealers carlot">Why Choose Us</a></li>
+        </ul>
+    </nav>
+    <section id="about-us">
+        <h1>About Us</h1>
+        <div class="about-section">
+            <img src="image_10.jpg" alt="about-us" class="responsive-image">
             <p>Your Ultimate Destination for Buying and Selling Cars</p>
             <form action="search.php" method="GET" class="search-form">
                 <input type="text" name="query" placeholder="Search for cars..." required>
